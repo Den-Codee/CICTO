@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CICTO</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+     
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url('bg.png');
+      background-size: cover;  
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      width: 95%;
+      margin: 0;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: 10px;
+    }
+
+    .logo-img {
+      width: 65px;
+      height: 75px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #1a3c6d;
+    }
+
+    .logo-sub {
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 120px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #374151;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #247af3;
+    }
+
+    .logout-btn {
+      background-color: rgb(232, 29, 29);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .logout-btn:hover {
+      background-color: #ef4747;
+    }
+
+   </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      
+      <div class="logo-area">
+        <img src="LOGO.png" class="logo-img">
+
+        <div class="logo-text">
+          <div class="logo-main">CICTO</div>
+          <div class="logo-sub">Baliwag City</div>
+        </div>
+      </div>
+      
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="trackdocu.html">Track Documents</a>
+        <a href="reports.html">Reports</a>
+        <a href="help.html">Help</a>
+        <a href="#" class="logout-btn">Log out</a>
+      </div>
+    </div>
+  </nav>
+     
+</body>
+</html>
