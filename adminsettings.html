@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CICTO Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #347add;
+  color: white;
+  padding-top: 20px;
+}
+
+/* LOGO */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 90px;
+}
+
+.logo-main {
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+}
+
+.logo-sub {
+  font-size: 15px;
+  color: black;
+}
+
+/* MENU */
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  text-align:center
+}
+
+.sidebar a:hover {
+  background: #247af3;
+}
+
+/* LOGOUT */
+.logout {
+  position: absolute;
+  width: 100%;
+  background: #347add;
+  text-align: center;
+}
+ 
+/* PAGE HEADER */
+.page-header{
+    width:95%;
+    margin-bottom:30px;
+}
+
+.page-header h1{
+    font-size:30px;
+    font-weight:600;
+}
+
+.page-header h1:first-child{
+    border-bottom:2px solid #ddd;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* ===== ADDED USERS STYLE ===== */
+
+.top-controls {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.top-controls input,
+.top-controls select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #347add;
+  color: white;
+}
+
+.settings-box{
+    background:#fff;
+    width:95%;
+    margin-top:30px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.settings-box h3{
+    color: black;
+    padding-bottom:15px;
+    margin-bottom:25px;
+    border-bottom:2px solid #ddd;
+}
+
+.setting-item{
+    display:flex;
+    justify-content:left;
+    align-items:left;
+    gap:100px;         
+    margin-left:90px;
+    margin-bottom:10px;
+}
+
+.setting-item label{
+    width:180px;
+    text-align:left;
+    font-size:18px;
+    font-weight:900;
+}
+
+.setting-item select{
+    width:260px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.setting-item select:focus{
+    outline:none;
+    border-color:#347add;
+}
+
+.save-container{
+    text-align:center;
+    margin-top:30px;
+}
+
+.save-btn{
+    background:#347add;
+    color:white;
+    border:none;
+    padding:10px 30px;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.save-btn:hover{
+    background:#2467c8;
+}
+
+/* ACCOUNT SETTINGS */
+.account-box{
+    background:#fff;
+    width:95%;
+    margin-top:30px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.account-box h4{
+    color: black;
+    font-size:20px;
+    padding-bottom:15px;
+    margin-bottom:25px;
+    border-bottom:2px solid #ddd;
+}
+.account-row{
+    display:flex;
+    justify-content:center;
+    gap:80px; 
+    margin-top:20px;
+}
+
+.account-item{
+    display:flex;
+    align-items:center;
+    gap:15px; 
+}
+
+.account-item label{
+    font-size:18px;
+    font-weight:900;
+}
+
+.change-btn{
+    background:#347add;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.change-btn:hover{
+    background:#2467c8;
+}
+
+/* SECURITY SETTINGS */
+
+.security-box{
+    background:#fff;
+    width:95%;
+    margin-top:30px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.security-box h3{
+    color:black;
+    font-size:20px;
+    padding-bottom:15px;
+    margin-bottom:25px;
+    border-bottom:2px solid #ddd;
+}
+
+.security-item{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin-bottom:20px;
+}
+
+.security-item label{
+    width:220px;
+    font-size:18px;
+    font-weight:900;
+}
+
+.security-btn{
+    width:180px;
+    background:#347add;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.security-btn:hover{
+    background:#2467c8;
+}
+
+.security-item select{
+    width:180px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.security-item select:focus{
+    outline:none;
+    border-color:#347add;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <div class="sidebar-logo">
+    <img src="LOGO.png" class="logo-img">
+
+    <div class="logo-text">
+      <div class="logo-main">CICTO</div>
+      <div class="logo-sub">Baliwag City</div>
+    </div>
+  </div>
+
+  <a href="admin.html">Document <br>Management</a>
+  <a href="useradmin.html">Users</a>
+  <a href="adminreports.html">Reports</a>
+  <a href="adminsettings.html">Settings</a>
+  <a href="#" class="logout">Log Out</a>
+
+</div>
+
+<div class="main-content">
+ 
+    <div class="page-header"> <h1>Admin Panel</h1>
+    <h1>Settings</h1></div>
+   
+   <div class="settings-box">
+
+    <h3>General Settings</h3>
+
+    <div class="setting-item">
+        <label>Language</label>
+        <select>
+            <option>English</option>
+            <option>Filipino</option>
+        </select>
+    </div>
+
+    <div class="setting-item">
+        <label>Time Zone</label>
+        <select>
+            <option>(GMT+08:00) Asia/Manila</option>
+            <option>(GMT+00:00) UTC</option>
+            <option>(GMT-05:00) Eastern Time</option>
+        </select>
+    </div>
+
+    <div class="setting-item">
+        <label>Date Format</label>
+        <select>
+            <option>MM/DD/YYYY</option>
+            <option>DD/MM/YYYY</option>
+            <option>YYYY-MM-DD</option>
+        </select>
+    </div>
+ <div class="save-container">
+    <button class="save-btn">Save Changes</button>
+ </div>
+
+   </div>
+
+
+<div class="account-box">
+
+    <h4>Account Settings</h4>
+
+    <div class="account-row">
+
+        <div class="account-item">
+            <label>Change Email</label>
+            <button class="change-btn">Change Email</button>
+        </div>
+
+        <div class="account-item">
+            <label>Change Username</label>
+            <button class="change-btn">Change Username</button>
+        </div>
+
+    </div>
+</div>
+
+    <div class="security-box">
+
+    <h3>Security Settings</h3>
+
+    <div class="security-item">
+        <label>Change Password</label>
+        <button class="security-btn">Change Password</button>
+    </div>
+
+    <div class="security-item">
+        <label>Two-Factor Authentication</label>
+        <button class="security-btn">Enable</button>
+    </div>
+
+    <div class="security-item">
+        <label>Session Timeout</label>
+        <select>
+            <option>15 Minutes</option>
+            <option>30 Minutes</option>
+            <option>1 Hour</option>
+            <option>2 Hours</option>
+        </select>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
