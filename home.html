@@ -5,22 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CICTO</title>
 
+  <link rel="stylesheet" href="home.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-     
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      background-image: url('bg.png');
-      background-size: cover;       
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+<style>
+   body {
+    margin: 0;
+    min-height: 100vh;
+}
 
     * {
       margin: 0;
@@ -29,118 +21,25 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .navbar {
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+.section1{
+    height:100vh;
+    background-image: url('bg2.png');
+    display:flex;
+    align-items:center;
+}
 
-    .nav-container {
-      width: 95%;
-      margin: 0;
-      padding: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-    }
+.section2{
+    background-image: url('section2.png');
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:180px 10%;
+}
+</style>
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-left: 10px;
-    }
-
-    .logo-img {
-      width: 65px;
-      height: 75px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .logo-main {
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #1a3c6d;
-    }
-
-    .logo-sub {
-      font-size: 0.82rem;
-      color: #6b7280;
-      margin-top: -4px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 120px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #374151;
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #247af3;
-    }
-
-    .admin-btn {
-      background-color: #2C6ECB;
-      color: white !important;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    .admin-btn:hover {
-      background-color: #16335c;
-    }
-
-     /* HERO SECTION */
-    .hero {
-      text-align: left;
-      margin-left: 50px;
-      margin-top: 120px;
-      padding: 60px 80px;
-      max-width: 600px;
-    }
-
-    .hero-description {
-      font-size: 30px; 
-      font-weight: 600;
-      color: white;
-      display: flex;
-      gap: 12px;
-    }
-
-    .hero-title {
-      font-size: 3.2rem; 
-      font-weight: 700;
-      margin-top: 20px;
-      color: white;
-    }
-
-    .hero-description {
-      font-size: 27px;
-      margin-top: 30px;
-      color: white;
-    }
-  </style>
 </head>
-
 <body>
-  <nav class="navbar">
+<nav class="navbar">
     <div class="nav-container">
       
       <div class="logo-area">
@@ -157,24 +56,99 @@
         <a href="trackdocu.html">Track Documents</a>
         <a href="reports.html">Reports</a>
         <a href="help.html">Help</a>
-        <a href="#" class="admin-btn">Admin</a>
+        <a href="../login/login.html" class="logout-btn">Log out</a>
       </div>
     </div>
   </nav>
-     
-   <!-- HERO SECTION -->
-  <section class="hero">
-    <h1 class="hero-description">
+  
+  <section class="section1">
+    <div class="section1-content">
+
+        <p class="section1-tagline">
     Track, Manage, and Monitor
-    </h1>
+</p>
+        <h1>
+            Your Documents <br>
+            Efficiently
+        </h1>
 
-    <h2 class="hero-title">
-      Your Documents Efficiently
-    </h2>
+        <p class="section1-description">
+            Welcome to CICTO Document <br>
+            Tracking System
+        </p>
+    </div>
+</section>
 
-    <p class="hero-description">
-      Welcome to CICTO Document <br>Tracking System</br>
-    </p>
+ <section class="section2">
 
-</body>
-</html>
+    <div class="features-container">
+
+        <div class="feature-box">
+            <div class="feature-icon">📍</div>
+
+            <div class="feature-content">
+                <h3>Real-Time Tracking</h3>
+                <p>Monitor document movement instantly.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon">📱</div>
+
+            <div class="feature-content">
+                <h3>QR Code Scanning</h3>
+                <p>Quickly scan documents with QR codes.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon">📊</div>
+
+            <div class="feature-content">
+                <h3>Detailed Reports</h3>
+                <p>View complete document history.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="features-heading">
+    Why Choose CICTO Document Tracking System?
+</h2>
+
+<div class="why-container">
+
+    <div class="why-box">
+        <div class="why-icon">📁</div>
+        <div class="why-content">
+            <h3>Efficient Management</h3>
+            <p>Quickly scan documents with QR codes.</p>
+        </div>
+    </div>
+
+    <div class="why-box">
+        <div class="why-icon">🛡️</div>
+        <div class="why-content">
+            <h3>Secure & Reliable</h3>
+            <p>View complete document history.</p>
+        </div>
+    </div>
+
+    <div class="why-box">
+        <div class="why-icon">🔳</div>
+        <div class="why-content">
+            <h3>Easy QR Scanning</h3>
+            <p>Quickly scan documents with QR codes.</p>
+        </div>
+    </div>
+
+    <div class="why-box">
+        <div class="why-icon">📊</div>
+        <div class="why-content">
+            <h3>Detailed Analytics</h3>
+            <p>View complete document history.</p>
+        </div>
+    </div>
+
+</div>
+</section>
