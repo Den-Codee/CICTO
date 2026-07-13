@@ -4,109 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CICTO</title>
-
+ 
+  <link rel="stylesheet" href="reports.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
+    .material-symbols-outlined{
+    font-size:45px;
+    color:#0765e8;
+    margin-bottom:10px;
+}
      
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
+html{
+    height:100%;
+}
 
-    body {
-      min-height: 100vh;
-      background-image: url('bg.png');
-      background-size: cover;  
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
+body{
+    min-height:100vh;
+    height:auto;
+    overflow-y:auto;
+    background-image:url('bg.png');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+}
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-
-    .navbar {
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      width: 95%;
-      margin: 0;
-      padding: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-left: 10px;
-    }
-
-    .logo-img {
-      width: 65px;
-      height: 75px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .logo-main {
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #1a3c6d;
-    }
-
-    .logo-sub {
-      font-size: 0.82rem;
-      color: #6b7280;
-      margin-top: -4px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 120px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: #374151;
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #247af3;
-    }
-
-    .logout-btn {
-      background-color: rgb(232, 29, 29);
-      color: white !important;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    .logout-btn:hover {
-      background-color: #ef4747;
-    }
-
    </style>
 </head>
 
@@ -128,10 +58,319 @@
         <a href="trackdocu.html">Track Documents</a>
         <a href="reports.html">Reports</a>
         <a href="help.html">Help</a>
-        <a href="#" class="logout-btn">Log out</a>
+        <a href="../login/login.html" class="logout-btn">Log out</a>
       </div>
     </div>
   </nav>
-     
+
+  <div class="report-container">
+
+    <h1 class="report-title">Report & Analytics</h1>
+
+    <div class="stats">
+
+        <div class="stat-box">
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:30px;">
+
+        <i class="fa-solid fa-file-lines"
+           style="font-size:60px; color:rgb(0, 195, 255);"></i>
+
+        <div>
+            <h3>Total Documents</h3>
+            <p>245</p>
+        </div>
+
+    </div>
+
+</div>
+
+       <div class="stat-box">
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:30px;">
+
+        <i class="fa-solid fa-calendar-check"
+           style="font-size:60px; color:green;"></i>
+
+        <div>
+            <h3>Monthly Process</h3>
+            <p>52</p>
+        </div>
+
+    </div>
+
+</div>
+
+      <div class="stat-box">
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:30px;">
+        <i class="fa-solid fa-triangle-exclamation"
+           style="font-size:60px; color:rgb(225, 106, 2);"></i>
+
+        <div>
+            <h3>Delayed</h3>
+            <p>8</p>
+        </div>
+
+    </div>
+
+</div>
+
+       <div class="stat-box">
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:30px;">
+
+        <i class="fa-solid fa-circle-check"
+           style="font-size:60px; color:green;"></i>
+
+        <div>
+            <h3>Approve Rate</h3>
+            <p>94%</p>
+        </div>
+
+    </div>
+
+</div>
+    </div>
+
+   <div class="export-boxes">
+
+    <div class="export-card">
+        <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
+            <i class="fa-solid fa-file-pdf"
+               style="font-size:55px; color:#e53935;"></i>
+
+            <div>
+                <h3 style="margin-bottom:12px;">Download PDF</h3>
+                <button>Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="export-card">
+        <div style="display:flex; align-items:center; justify-content:center; gap:15px;">
+            <i class="fa-solid fa-file-excel"
+               style="font-size:55px; color:#1d6f42;"></i>
+
+            <div>
+                <h3 style="margin-bottom:12px;">Export Excel</h3>
+                <button>Export Excel</button>
+            </div>
+        </div>
+    </div> 
+
+   </div>
+
+    <div class="chart-container">
+
+    <!-- BAR CHART -->
+
+    <div class="chart-box">
+
+        <h3>Monthly Documents Processed</h3>
+
+        <canvas id="barChart"></canvas>
+
+        <div class="chart-legend">
+
+            <div class="legend-item">
+                <span class="dot pending"></span>
+                Pending
+            </div>
+
+            <div class="legend-item">
+                <span class="dot inprocess"></span>
+                In Process
+            </div>
+
+            <div class="legend-item">
+                <span class="dot approval"></span>
+                For Approval
+            </div>
+
+            <div class="legend-item">
+                <span class="dot completed"></span>
+                Completed
+            </div>
+
+            <div class="legend-item">
+                <span class="dot rejected"></span>
+                Rejected
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DONUT CHART -->
+
+    <div class="chart-box">
+
+    <h3>Status Distribution</h3>
+
+   <div class="pie-layout">
+
+    <!-- LEFT -->
+    <div class="status-list">
+
+        <div class="status-item">
+            <span class="dot pending"></span> Pending
+        </div>
+
+        <div class="status-item">
+            <span class="dot inprocess"></span> In Process
+        </div>
+
+        <div class="status-item">
+            <span class="dot approval"></span> For Approval
+        </div>
+
+        <div class="status-item">
+            <span class="dot completed"></span> Completed
+        </div>
+
+        <div class="status-item">
+            <span class="dot rejected"></span> Rejected
+        </div>
+
+    </div>
+
+    <div class="pie-chart">
+        <canvas id="donutChart"></canvas>
+    </div>
+
+</div>
+
+</div>
+
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script>
+const bar = document.getElementById('barChart');
+
+new Chart(bar, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+            'Jan','Feb','Mar','Apr','May','Jun',
+            'Jul','Aug','Sep','Oct','Nov','Dec'
+        ],
+
+        datasets: [
+
+            {
+                label:'Pending',
+                data:[20,30,40,35,30,25,20,40,35,30,25,20],
+                backgroundColor:'#FFD54F'
+            },
+
+            {
+                label:'In Process',
+                data:[30,35,45,40,38,30,25,50,45,40,35,30],
+                backgroundColor:'#43A047'
+            },
+
+            {
+                label:'For Approval',
+                data:[40,50,55,50,45,40,35,60,55,50,45,40],
+                backgroundColor:'#2196F3'
+            },
+
+            {
+                label:'Completed',
+                data:[60,70,80,75,70,65,60,90,85,80,75,70],
+                backgroundColor:'#FB8C00'
+            },
+
+            {
+                label:'Rejected',
+                data:[5,8,10,6,5,4,3,9,7,6,5,4],
+                backgroundColor:'#E53935'
+            }
+
+        ]
+    },
+
+    options:{
+
+        responsive:true,
+
+        scales:{
+
+            y:{
+                beginAtZero:true,
+                max:100,
+                ticks:{
+                    stepSize:20
+                }
+            }
+
+        },
+
+        plugins:{
+            legend:{
+                display:false
+            }
+        }
+
+    }
+
+});
+
+
+
+const donut = document.getElementById('donutChart');
+
+new Chart(donut,{
+
+    type:'doughnut',
+
+    data:{
+
+        labels:[
+            'Pending',
+            'In Process',
+            'For Approval',
+            'Completed',
+            'Rejected'
+        ],
+
+        datasets:[{
+
+            data:[
+                18,
+                25,
+                20,
+                30,
+                7
+            ],
+
+            backgroundColor:[
+                '#FFD54F',
+                '#43A047',
+                '#2196F3',
+                '#FB8C00',
+                '#E53935'
+            ]
+
+        }]
+
+    },
+
+    options:{
+    responsive:true,
+    maintainAspectRatio:false,
+
+    plugins:{
+        legend:{
+            display:false
+        }
+    }
+}
+
+});
+</script>
 </body>
 </html>
