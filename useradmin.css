@@ -1,0 +1,117 @@
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width:clamp(200px, 20vw, 250px);
+  height: 100%;
+  background: #347add;
+  color: white;
+  padding-top: 20px;
+}
+
+/* LOGO */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+}
+
+.logo-img{
+    width:clamp(70px,8vw,100px);
+    height:auto;
+}
+
+.logo-main {
+  font-size:clamp(1.8rem,3vw,2.5rem);
+  font-weight: 600;
+  color: black;
+}
+
+.logo-sub {
+  font-size:clamp(.8rem,1.5vw,1rem);
+  color: black;
+}
+
+/* MENU */
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  text-align:center
+}
+
+.sidebar a:hover {
+  background: #247af3;
+}
+
+/* LOGOUT */
+.logout {
+  position:static; 
+  margin-top:auto;
+  width: 100%;
+  background: #347add;
+  text-align: center;
+}
+
+/* PAGE HEADER */
+.page-header{
+    width:95%;
+    margin-bottom:30px;
+}
+
+.page-header h1{
+    font-size:clamp(1.5rem,3vw,2rem);
+    font-weight:600;
+}
+
+.page-header h1:first-child{
+    border-bottom:2px solid #ddd;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left:clamp(200px,20vw,250px);
+  padding: 30px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* ===== ADDED USERS STYLE ===== */
+
+.top-controls {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.top-controls input,
+.top-controls select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #347add;
+  color: white;
+}
+

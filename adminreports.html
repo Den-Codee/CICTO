@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CICTO Dashboard</title>
+
+<link rel="stylesheet" href="adminreports.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<div class="sidebar-logo">
+
+<img src="LOGO.png" class="logo-img">
+
+<div class="logo-text">
+<div class="logo-main">CICTO</div>
+<div class="logo-sub">Baliwag City</div>
+ </div>
+   </div>
+
+<a href="admin.html">Document <br>Management</a>
+<a href="useradmin.html">Users</a>
+<a href="adminreports.html">Reports</a>
+<a href="adminsettings.html">Settings</a>
+<a href="#" class="logout">Log Out</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+
+<h1>Admin Panel</h1>
+
+<!-- GRAPH BOX -->
+<div class="chart-box">
+
+<h2>Reports</h2>
+
+<div class="chart-container">
+<canvas id="statusChart"></canvas>
+</div>
+</div>
+ 
+<!-- PENDING DOCUMENTS -->
+<div class="pending-box">
+
+    <h2>Pending Documents</h2>
+
+    <div class="table-container">
+
+        <table class="pending-table">
+
+        <thead>
+            <tr>
+                <th>Document Title</th>
+                <th>Uploaded By</th>
+                <th>Date Updated</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Barangay Clearance</td>
+                <td>Juan Dela Cruz</td>
+                <td>July 3, 2026</td>
+                <td><span class="status-pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Business Permit</td>
+                <td>Maria Santos</td>
+                <td>July 2, 2026</td>
+                <td><span class="status-pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Tax Declaration</td>
+                <td>Pedro Reyes</td>
+                <td>July 1, 2026</td>
+                <td><span class="status-pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Building Permit</td>
+                <td>Ana Garcia</td>
+                <td>June 30, 2026</td>
+                <td><span class="status-pending">Pending</span></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    
+  </div>
+  
+</div>
+
+<script>
+
+const ctx=document.getElementById('statusChart');
+
+new Chart(ctx,{
+
+type:'line',
+
+data:{
+
+labels:["","","",""],
+
+datasets:[
+{
+
+label:"Approved",
+
+data:[0,400,100,500],
+
+borderColor:"#3498db",
+
+backgroundColor:"#3498db",
+
+pointBackgroundColor:"#3498db",
+
+pointRadius:5,
+
+borderWidth:3,
+
+fill:false,
+
+tension:.4
+
+},
+
+{
+
+label:"Pending",
+
+data:[0,300,200,500],
+
+borderColor:"#f1c40f",
+
+backgroundColor:"#f1c40f",
+
+pointBackgroundColor:"#f1c40f",
+
+pointRadius:5,
+
+borderWidth:3,
+
+fill:false,
+
+tension:.4
+
+},
+
+{
+
+label:"Rejected",
+
+data:[0,100,400,200],
+
+borderColor:"#e74c3c",
+
+backgroundColor:"#e74c3c",
+
+pointBackgroundColor:"#e74c3c",
+
+pointRadius:5,
+
+borderWidth:3,
+
+fill:false,
+
+tension:.4
+
+}
+
+ ]
+
+},
+
+options:{
+
+    responsive:true,
+
+    maintainAspectRatio:false,
+
+    plugins:{
+        legend:{
+            position:"bottom",
+            align:"center",
+            labels:{
+                usePointStyle:true,
+                pointStyle:"circle",
+                boxWidth:12,
+                boxHeight:12,
+                padding:60,
+                font:{
+                    size:14
+                }
+            }
+        }
+    },
+
+    scales:{
+        x:{
+            ticks:{
+                display:false
+            },
+            grid:{
+                display:false
+            }
+        },
+        y:{
+            min:0,
+            max:500,
+            ticks:{
+                callback:function(value){
+                    if(value==0 || value==100 || value==200 || value==300 || value==400 || value==500){
+                        return value;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
