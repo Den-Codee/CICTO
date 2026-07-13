@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>CICTO Dashboard</title>
 
+<link rel="stylesheet" href="useradmin.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -12,105 +13,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-}
-
-/* SIDEBAR */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  background: #347add;
-  color: white;
-  padding-top: 20px;
-}
-
-/* LOGO */
-.sidebar-logo {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-}
-
-.logo-img {
-  width: 100px;
-  height: 90px;
-}
-
-.logo-main {
-  font-size: 40px;
-  font-weight: 600;
-  color: black;
-}
-
-.logo-sub {
-  font-size: 15px;
-  color: black;
-}
-
-/* MENU */
-.sidebar a {
-  display: block;
-  padding: 15px 20px;
-  color: white;
-  text-decoration: none;
-  text-align:center
-}
-
-.sidebar a:hover {
-  background: #247af3;
-}
-
-/* LOGOUT */
-.logout {
-  position: absolute;
-  width: 100%;
-  background: #347add;
-  text-align: center;
-}
-
-/* MAIN CONTENT */
-.main-content {
-  margin-left: 250px;
-  padding: 30px;
-  background: #f5f5f5;
-  min-height: 100vh;
-}
-
-/* ===== ADDED USERS STYLE ===== */
-
-.top-controls {
-  display: flex;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.top-controls input,
-.top-controls select {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* TABLE */
-table {
-  width: 100%;
-  background: white;
-  border-collapse: collapse;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-th, td {
-  padding: 30px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background: #347add;
-  color: white;
 }
 </style>
 </head>
@@ -129,19 +31,21 @@ th {
     </div>
   </div>
 
-  <a href="#">Document <br>Management</a>
+  <a href="admin.html">Document <br>Management</a>
   <a href="useradmin.html">Users</a>
-  <a href="#">Reports</a>
-  <a href="#">Settings</a>
-
+  <a href="adminreports.html">Reports</a>
+  <a href="adminsettings.html">Settings</a>
   <a href="#" class="logout">Log Out</a>
 
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="main-content">
-  <h1>Admin Panel</h1>
-  <h2>User</h2>
+
+  <div class="page-header">
+    <h1>Admin Panel</h1>
+    <h1>User</h1>
+  </div>
 
   <!-- CONTROLS -->
   <div class="top-controls">
