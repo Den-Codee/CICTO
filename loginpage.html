@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CICTO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,body{
+    height:100%;
+}
+
+body{
+    min-height:100vh;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    padding:40px;
+    gap:60px;
+    overflow:hidden;
+}
+
+.login-container{
+    width:100%;
+    max-width:600px;
+    min-height:650px;
+    height:100%;
+    background:#fff;
+    border-radius:12px;
+    padding:45px;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin-top:-25px;
+}
+
+.logo-section img{
+    width:100px;
+    height:100px;
+}
+
+.logo-text h2{
+    font-size:30px;
+    color:#1b4e9b;
+}
+
+.logo-text p{
+    font-size:15px;
+    color:#000000;
+    font-weight:500;
+}
+
+.title{
+    text-align:center;
+    font-size:25px;
+    color:#222;
+    margin-bottom:20px;
+}
+
+form > label{
+    display:block;
+    width:80%;
+    margin:0 auto 8px;
+    font-size:14px;
+    font-weight:500;
+}
+
+input[type="email"],
+input[type="password"]{
+    display:block;
+    width:80%;
+    margin:0 auto 20px;
+    padding:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+.password-top{
+    width:80%;
+    margin:0 auto 8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.password-top a{
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    color:#1b4e9b;
+    width:auto;
+    margin:0;
+}
+  
+.remember{
+    width:80%;
+    margin:0 auto 25px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+}
+
+.login-btn{
+    display:block;
+    margin: 0 auto;
+    width:50%;
+    padding:15px;
+    background:#337be8;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#123d7c;
+}
+
+.or{
+    text-align:center;
+    margin:25px 0;
+    color:#777;
+    font-size:15px;
+}
+
+.login-as{
+    text-align:center;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.roles{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:5px;
+}
+
+.role-box{
+    flex:1;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:500;
+    text-decoration: none;
+}
+
+
+.admin{
+    background:rgba(105, 255, 178, 0.4);
+    color:#000;
+}
+
+.superadmin{
+    background:rgba(61, 61, 244, 0.52);
+    color:#000;
+}
+
+.role-box:hover{
+    background:#1b4e9b;
+    color:white;
+}
+
+.register{
+    text-align:center;
+    font-size:13px;
+}
+
+.register a{
+    color:#1b4e9b;
+    text-decoration:none;
+    font-weight:600;
+} 
+
+.right-content{
+    flex:1;
+    max-width:700px;
+}
+
+.welcome{
+    font-size:35px;
+    font-weight:400;
+    font-weight:700;
+    color:#000;
+    margin-bottom:10px;
+}
+
+.title-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.cicto{
+    font-size:70px;
+    font-weight:700;
+    color:#458bf4b8;
+    -webkit-text-stroke:2px #0d2f63;
+}
+
+.document{
+    font-size:70px;
+    font-weight:700;
+    color:#e4bf50;
+    -webkit-text-stroke:2px #626406;
+}
+
+.tracking{
+    font-size:70px;
+    font-weight:700;
+    color:#e4bf50;
+    -webkit-text-stroke:2px #626406;
+    line-height:1.1;
+}
+
+.back-icon{
+    display:inline-block;
+    font-size:40px;
+    color:#1b4e9b;
+    text-decoration:none;
+    transition:.3s;
+
+    position: relative;
+    top: -30px;
+}
+
+.back-icon:hover{
+    transform:translateX(-4px);
+    color:#123d7c;
+}
+
+.error-input{
+    border:2px solid #ff2d55 !important;
+}
+
+.error-message{
+    width:80%;
+    margin: -10px auto 15px;
+    color:#ff2d55;
+    font-size:14px;
+    display:none;
+}
+
+.error-message.show{
+    display:block;
+}
+</style>
+</head>
+
+<body>
+   
+
+<div class="login-container">
+<a href="login.html" class="back-icon">&#8592;</a>
+    <div class="logo-section">
+        <img src="logo.png" alt="Logo">
+
+        <div class="logo-text">
+            <h2>CICTO</h2>
+            <p>Baliwag City</p>
+        </div>
+    </div>
+
+    <h1 class="title">Log in to your account</h1>
+
+   <form id="loginForm">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <div class="password-top">
+            <label>Password</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <input type="password" id="password" placeholder="Enter your password">
+
+<div class="error-message" id="loginError">
+    ⚠ The email or password you entered is incorrect.
+</div>
+
+        <div class="remember">
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember Me</label>
+        </div>
+
+        <button class="login-btn" id="loginBtn">Log In</button>
+
+    </form>
+
+    <div class="or">OR</div>
+
+    <div class="login-as">
+        Login As
+    </div>
+
+   <div class="roles">
+    <a href="adminlogin.html" class="role-box admin">
+        Admin
+    </a>
+
+    <a href="superadmin.html" class="role-box superadmin">
+        Super Admin
+    </a>
+</div>
+
+    <div class="register">
+        Don't have an account?
+        <a href="#">Register</a>
+    </div>
+</div>
+
+<div class="right-content">
+    <h3 class="welcome">Welcome to</h3>
+
+    <div class="title-row">
+        <h1 class="cicto">CICTO</h1>
+        <h1 class="document">Document</h1>
+    </div>
+
+    <h1 class="tracking">Tracking System</h1>
+
+<p style="font-size: 18px; font-weight: 500; color: #fefefe; margin-top: 30px;">
+    Track, Manage, and monitor <br>  Documents Efficiently.
+
+
+<script>
+document.getElementById("loginBtn").addEventListener("click", function(event){
+    event.preventDefault();
+
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const error = document.getElementById("loginError");
+
+    if(email.value === "user@gmail.com" &&
+       password.value === "user12345"){
+
+        email.classList.remove("error-input");
+        password.classList.remove("error-input");
+        error.classList.remove("show");
+
+       window.location.href = "../user/home.html";
+
+    }else{
+
+        email.classList.add("error-input");
+        password.classList.add("error-input");
+        error.classList.add("show");
+
+    }
+});
+</script>
+
+
+</div>
+</body>
+</html>
