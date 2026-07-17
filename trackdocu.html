@@ -84,17 +84,17 @@
 
       <tr>
         <td>CN-001</td>
-        <td>Business Permit</td>
-        <td>Legal</td>
-        <td><span class="status pending">Pending</span></td>
+        <td>Memo</td>
+        <td>IT Department</td>
+        <td><span class="status pending">In Process</span></td>
         <td>2026-04-29</td>
         <td><button class="view-btn">View</button></td>
       </tr>
 
       <tr>
         <td>CN-002</td>
-        <td>Building Permit</td>
-        <td>Engineering</td>
+        <td>Request</td>
+        <td>HR Department</td>
         <td><span class="status approved">Approved</span></td>
         <td>2026-04-28</td>
         <td><button class="view-btn">View</button></td>
@@ -102,8 +102,8 @@
 
       <tr>
         <td>CN-003</td>
-        <td>Clearance</td>
-        <td>HR</td>
+        <td>Report</td>
+        <td>Finance Office</td>
         <td><span class="status processing">Processing</span></td>
         <td>2026-04-27</td>
         <td><button class="view-btn">View</button></td>
@@ -111,8 +111,8 @@
 
       <tr>
         <td>CN-004</td>
-        <td>PePermit</td>
-        <td>HR</td>
+        <td>Memo</td>
+        <td>IT Department</td>
         <td><span class="status rejected">Rejected</span></td>
         <td>2026-04-29</td>
         <td><button class="view-btn">View</button></td>
@@ -142,6 +142,15 @@ function searchTable() {
     tr[i].style.display = show ? "" : "none";
   }
 }
+
+document.querySelectorAll(".view-btn").forEach(button => {
+    button.addEventListener("click", function() {
+        const row = this.closest("tr");
+        const controlNo = row.cells[0].textContent;
+
+        window.location.href = "trackdocuview.html?id=" + encodeURIComponent(controlNo);
+    });
+});
 </script>
 
 </body>
