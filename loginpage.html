@@ -297,6 +297,27 @@ input[type="password"]{
 </div>
 
 <script>
+const accounts = [
+    {
+        email: "user@gmail.com",
+        password: "user12345",
+        role: "user",
+        redirect: "../user/home.html"
+    },
+    {
+        email: "admin@gmail.com",
+        password: "admin12345",
+        role: "admin",
+        redirect: "../admin panel/admin.html"
+    },
+    {
+        email: "superadmin@gmail.com",
+        password: "super12345",
+        role: "superadmin",
+        redirect: "../superadmin/superadmin.html"
+    }
+];
+
 document.getElementById("loginBtn").addEventListener("click", function(event){
     event.preventDefault();
 
@@ -304,20 +325,28 @@ document.getElementById("loginBtn").addEventListener("click", function(event){
     const password = document.getElementById("password");
     const error = document.getElementById("loginError");
 
-    if(email.value === "user@gmail.com" &&
-       password.value === "user12345"){
 
+    const matched = accounts.find(function(acc){
+        return acc.email === email.value.trim() &&
+               acc.password === password.value;
+    });
+
+    if(matched){
+    
         email.classList.remove("error-input");
         password.classList.remove("error-input");
         error.classList.remove("show");
-        window.location.href = "../user/home.html";
+
+        console.log("[v0] Login success. Role:", matched.role, "-> Redirecting to:", matched.redirect);
+        window.location.href = matched.redirect;
 
     }else{
-
+    
         email.classList.add("error-input");
         password.classList.add("error-input");
         error.classList.add("show");
 
+        console.log("[v0] Login failed for email:", email.value.trim());
     }
 });
 </script>
